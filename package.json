@@ -1,0 +1,20 @@
+{
+  "name": "simple-blog-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MERN blog with JWT auth, OAuth, RBAC, admin panel and real-time notifications",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "db": "npm run db --prefix server",
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:local": "concurrently -n db,api,web -c green,blue,magenta \"npm run db\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "seed": "npm run seed --prefix server",
+    "seed:demo": "npm run seed:demo --prefix server",
+    "test": "npm test --prefix server",
+    "test:coverage": "npm run test:coverage --prefix server",
+    "build": "npm run build --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
